@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Зарплата</title>
+  <link rel="stylesheet" href="../static/default_page.css" />
+</head>
+<body>
+  <h1>Добрый день</h1>
+
+  <div class="container">
+
+    <div class="block">
+      <p>Введите логин и пароль, чтобы получить токен</p>
+      <input type="text" id="login" placeholder="Логин" />
+      <input type="password" id="password" placeholder="Пароль" />
+      <button id="getTokenBtn">Получить токен</button>
+    </div>
+
+    <div class="block">
+      <p>Введите токен, чтобы увидеть данные</p>
+      <input type="text" id="tokenInput" placeholder="Токен" />
+      <button id="getDataBtn">Получить данные</button>
+      <div id="tokenStatus"></div>
+    </div>
+  </div>
+
+  <div class="data-box">
+    <div>
+      <p>Текущая зарплата:</p>
+      <div id="salary" class="value">—</div>
+    </div>
+    <div>
+      <p>Дата следующего повышения:</p>
+      <div id="nextSalaryIncrease" class="value">—</div>
+    </div>
+  </div>
+
+  <script src="../static/default_page.js"></script>
+</body>
+</html>

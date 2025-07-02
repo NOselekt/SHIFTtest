@@ -1,0 +1,26 @@
+[project]
+name = "shifttest"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "NOselekt",email = "feofanovvlad@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "alembic (==1.14.0)",
+    "fastapi (>=0.115.14,<0.116.0)",
+    "uvicorn (>=0.34.3,<0.35.0)",
+    "psycopg2 (>=2.9.10,<3.0.0)",
+    "jinja2 (>=3.1.6,<4.0.0)",
+    "asyncpg (>=0.30.0,<0.31.0)",
+    "python-multipart (>=0.0.20,<0.0.21)",
+    "pytest (>=8.4.1,<9.0.0)",
+    "httpx (>=0.28.1,<0.29.0)",
+    "pytest-asyncio (>=1.0.0,<2.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

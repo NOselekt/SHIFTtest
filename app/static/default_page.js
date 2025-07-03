@@ -28,12 +28,16 @@ document.getElementById('getTokenBtn').addEventListener('click', async () => {
     const data = await response.json();
 
     if (response.ok && data.token) {
-      const btn = document.getElementById('getTokenBtn');
-      btn.disabled = true;
-      btn.textContent = data.token;
+      var oldEle = document.getElementById("getTokenBtn");
+      var newEle = document.createElement("div");
+      newEle.className = "new-token";
+      newEle.innerHTML = data.token + "<br>(Скопировано в буфер обмена)";
+      navigator.clipboard.writeText(data.token);
+      oldEle.parentNode.replaceChild(newEle, oldEle);
+      document.getElementById('tokenInput').value = data.token;
       document.getElementById('tokenInput').value = data.token;
     } else {
-      alert(data.message || 'Ошибка авторизации');
+      alert(data.detail);
     }
   } catch (err) {
     alert('Ошибка соединения с сервером');

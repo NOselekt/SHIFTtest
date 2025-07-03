@@ -17,18 +17,17 @@ if config.config_file_name is not None:
 
 section = config.config_ini_section
 config.set_section_option(section, "DB_USER", "postgres")
-config.set_section_option(section, "DB_PASS", "uriel999")
-config.set_section_option(section, "DB_NAME", "shifttest")
-config.set_section_option(section, "DB_HOST", "localhost")
+config.set_section_option(section, "DB_PASS", "postgres")
+config.set_section_option(section, "DB_NAME", "employee")
+config.set_section_option(section, "DB_HOST", "pg")
 config.set_section_option(section, "DB_PORT", "5432")
 
 # add your model's MetaData object here
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
+from models import Employee
 from backend.Base import Base
-from models.Employee import Employee
-
 
 target_metadata = Base.metadata
 

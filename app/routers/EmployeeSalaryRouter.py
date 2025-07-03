@@ -4,12 +4,12 @@ from fastapi.templating import Jinja2Templates
 from typing import Annotated
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, update
-from backend.async_database import get_database
 import os
 import binascii
 import datetime
 
 from models import Employee
+from backend.async_database import get_database
 
 
 TOKEN_REFRESH_INTERVAL = 300

@@ -1,22 +1,21 @@
 ## Русский
 ### Запуск с помощью Docker
 
-1. Соберите и запустите контейнер из директории проекта.
-   Сделать это можно с помощью команды в терминале:
-   `docker compose up -d`
-2. Перейдите по адресу http://127.0.0.1:8000. Будет открыта следующая страница (внешний вид может отличаться в зависимости от монитора):
+1. Соберите и запустите контейнер pgadmin
+   `docker compose up -d pgadmin`
+2. Перейдите по адресу http://127.0.0.1:5050. Создайте сервер со следующими обязательными настройками:
+   host: pg
+   user: postgres
+   password: postgres
+3. Соберите и запустите контейнер app
+   `docker compose up -d app`
+4. С помощью pgAdmin создайте несколько пользователей.
+5. Перейдите по адресу http://127.0.0.1:8000. Будет открыта следующая страница (внешний вид может отличаться в зависимости от монитора):
    ![](img.png)
-3. Введите одну из следующих комбинаций логина и пароля:
-
-| Пароль | Логин |
-|:------:|:-----:|
-|  000   |  111  |
-|  111   |  222  |
-|  222   |  333  |
-4. Нажмите "Получить токен". Новый токен автоматически скопируется в ваш буфер обмена и появится в окне для ввода.
-5. Нажмите "Получить данные".
+6. Нажмите "Получить токен". Новый токен автоматически скопируется в ваш буфер обмена и появится в окне для ввода.
+7. Нажмите "Получить данные".
 #### Редактирование базы данных. pgAdmin
-По умолчанию в базе данных зарегистрированы 4 пользователя. Доступ к базе данных возможен лишь изнутри контейнера, поэтому для её редактирования можно воспользоваться установленным по умолчанию pgAdmin 4, порт которого — 5050.
+Доступ к базе данных возможен лишь изнутри контейнера, поэтому для её редактирования можно воспользоваться установленным по умолчанию pgAdmin 4, порт которого — 5050.
 ### Запуск без контейнеризации
 > Проект можно использовать с разными базами данных, однако их подключение к приложению будет отличаться. 
 > Дальнейшая инструкция представлена для PostgreSQL и pgAdmin 4.
@@ -50,21 +49,19 @@
 ## English
 ### Running with Docker
 
-1. Build and launch the container from the project directory.  
-   You can do this using the terminal command:  
-   `docker compose up -d`
-2. Go to [http://127.0.0.1:8000](http://127.0.0.1:8000). The following page will open (the appearance may vary depending on your monitor):  
+1. Build and launch the container pgadmin
+   `docker compose up -d pgadmin`
+2. Go to [http://127.0.0.1:5050](http://127.0.0.1:5050). Register server with next necessary parametres:
+   host: pg
+   user: postgres
+   password: postgres
+3. Build and launch the container app
+   `docker compose up -d app`
+4. Using pgAdmin create new users.
+5. Go to [http://127.0.0.1:8000](http://127.0.0.1:8000). The following page will open (the appearance may vary depending on your monitor):  
    ![](img.png)
-3. Enter one of the following login and password combinations:
-
-| Password | Login |
-|:--------:|:-----:|
-|   000    |  111  |
-|   111    |  222  |
-|   222    |  333  |
-
-4. Click **Get Token**. The new token will automatically be copied to your clipboard and will appear in the input window.
-5. Click **Get Data**.
+6. Click **Get Token**. The new token will automatically be copied to your clipboard and will appear in the input window.
+7. Click **Get Data**.
 
 #### Editing the Database – pgAdmin
 
